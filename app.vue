@@ -1,8 +1,6 @@
 <template>
   <div>
-    <Menubar :model="menuItems">
-      <template #end> {{ useCookie("username").value }} </template>
-    </Menubar>
+    <Menubar :model="menu" />
     <NuxtPage />
   </div>
 </template>
@@ -10,12 +8,12 @@
 <script lang="ts" setup>
 import type { MenuItemCommandEvent } from "primevue/menuitem";
 
-const menuItems = [
+const menu = [
   {
     label: "Home",
     items: [
       { label: "Welcome", to: "/" },
-      { label: "Login/out", to: "/loginout" },
+      { label: "Login/out", to: "/login" },
       { label: "Reload", command: () => location.reload() },
     ],
   },
@@ -31,10 +29,9 @@ const menuItems = [
   },
 ];
 
-for (const menu of menuItems)
-  menu.items.forEach((item: any) => {
+for (const head of menu)
+  head.items.forEach((item: any) => {
     if (!item.command)
       item.command = (event: MenuItemCommandEvent) => navigateTo(event.item.to);
   });
-
 </script>

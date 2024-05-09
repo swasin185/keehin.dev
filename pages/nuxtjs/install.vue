@@ -21,9 +21,9 @@
   "devDependencies": {
     "nuxt": "^3.11.2",
     "nuxt-primevue": "^0.3.1",
+    "primevue": "^3.52.0",
     "primeflex": "^3.3.1",
-    "primeicons": "^7.0.0",
-    "primevue": "^3.52.0"
+    "primeicons": "^7.0.0"
   }
 }
 
