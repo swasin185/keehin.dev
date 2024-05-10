@@ -13,30 +13,33 @@
         toggleMask
         @keydown.enter="login"
       />
+      {{ loggedIn ? new Date(session?.loginTime).toString() : "" }}
     </template>
     <template #footer>
       <Button v-if="loggedIn" @click="logout">Logout</Button>
       <Button v-else @click="login">Login</Button>
+      &nbsp;
+      <a href="/api/auth/github" external>GitHub</a>
+      &nbsp;
+      <a href="/api/auth/google" external>Google</a>
     </template>
   </Panel>
 </template>
 
 <script lang="ts" setup>
-const loggedIn: Ref<boolean> = useCookie("loggedIn");
-const username: Ref<string> = useCookie("username");
+const { loggedIn, user, session, clear } = useUserSession();
+const username: Ref<string> = ref(user?.value?.name || "");
 const password: Ref<string> = ref("");
 
 async function login() {
-  const data = await $fetch("/api/authen", {
+  await $fetch("/api/auth/local", {
     query: { username: username.value, password: password.value },
   });
-  loggedIn.value = data.isAuthen;
+  location.reload();
 }
 
-function logout() {
-  loggedIn.value = false;
-  username.value = "";
-  password.value = "";
-
+async function logout() {
+  await clear();
+  location.reload();
 }
 </script>
