@@ -1,8 +1,8 @@
 import { UserSession } from "#auth-utils";
-import createUserSession from "~/server/utils/createUserSession";
+import "~/server/utils/makeUserSession";
 export default oauth.githubEventHandler({
   async onSuccess(event: any, { user } : UserSession) {
-    await setUserSession(event, createUserSession(user));
+    await setUserSession(event, makeUserSession(user));
     return sendRedirect(event, "/");
   },
 });

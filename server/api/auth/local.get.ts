@@ -1,5 +1,5 @@
 import { User } from "#auth-utils";
-import createUserSession from "~/server/utils/createUserSession";
+import "~/server/utils/makeUserSession";
 
 export default eventHandler(async (event) => {
   const query = getQuery(event);
@@ -8,7 +8,7 @@ export default eventHandler(async (event) => {
   if (isAuthen) {
     await setUserSession(
       event,
-      createUserSession({ name: query.username } as User)
+      makeUserSession({ name: query.username } as User)
     );
   } else await clearUserSession(event);
 });

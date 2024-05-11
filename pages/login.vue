@@ -28,7 +28,7 @@
 
 <script lang="ts" setup>
 const { loggedIn, user, session, clear } = useUserSession();
-const username: Ref<string> = ref(user?.value?.name || "");
+const username: Ref<string> = ref(user?.value?.login || "");
 const password: Ref<string> = ref("");
 
 async function login() {

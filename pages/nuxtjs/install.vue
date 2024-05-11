@@ -14,23 +14,10 @@
 \> npm install nuxt-primevue primevue primeflex primeicons --save-dev
 \> npx nuxi@latest module add auth-utils
 
-[package.json]
-{
-  ...
-  "devDependencies": {
-    "nuxt": "^3.11.2",
-    "nuxt-primevue": "^0.3.1",
-    "nuxt-auth-utils": "^0.0.24",
-    "primevue": "^3.52.0",
-    "primeflex": "^3.3.1",
-    "primeicons": "^7.0.0"
-  }
-}
-
 [nuxt.config.ts]
 export default defineNuxtConfig({
   devtools: { enabled: true },
-  modules: ["nuxt-primevue"],
+  modules: ["nuxt-primevue", "nuxt-auth-utils"],
   css: [
     "primevue/resources/themes/mdc-light-indigo/theme.css",
     "primeicons/primeicons.css",
