@@ -10,6 +10,7 @@
     "postinstall": "nuxt prepare"
   },
   "devDependencies": {
+    "@nuxt/content": "^2.12.1",
     "nuxt": "^3.11.2",
     "nuxt-auth-utils": "^0.0.24",
     "nuxt-primevue": "^0.3.1",

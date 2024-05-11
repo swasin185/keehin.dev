@@ -1,7 +1,7 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   devtools: { enabled: true },
-  modules: ["nuxt-primevue", "nuxt-auth-utils"],
+  modules: ["nuxt-primevue", "nuxt-auth-utils", "@nuxt/content"],
   css: [
     "primevue/resources/themes/mdc-light-indigo/theme.css",
     "primeicons/primeicons.css",
@@ -23,4 +23,11 @@ export default defineNuxtConfig({
         process.env.NUXT_SESSION_SECRET || "1234567_1234567_1234567_12345678",
     },
   },
+  content: {
+    highlight: {
+      theme: {
+        default: 'github-light'
+      }
+    }
+  }
 });

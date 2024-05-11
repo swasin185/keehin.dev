@@ -11,6 +11,7 @@ import type { MenuItemCommandEvent } from "primevue/menuitem";
 const menu = [
   {
     label: "Home",
+    icon: "pi pi-home",
     items: [
       { label: "Welcome", to: "/" },
       { label: "Login/out", to: "/login" },
@@ -18,13 +19,14 @@ const menu = [
     ],
   },
   {
-    label: "Nuxt.js",
+    label: "Tutorial",
     items: [
-      { label: "Installation", to: "/nuxtjs/install" },
-      { label: "PrimeVue", to: "/nuxtjs/primevue" },
-      { label: "Prime Flex/Icon", to: "/nuxtjs/flexicon" },
-      { label: "Middleware", to: "/nuxtjs/middleware" },
-      { label: "Session", to: "/nuxtjs/session" },
+      { label: "Installation", to: "/tutorial/install" },
+      { label: "PrimeVue", to: "/tutorial/primevue" },
+      { label: "Prime Flex/Icon", to: "/tutorial/flexicon" },
+      { label: "UserSession", to: "/tutorial/usersession" },
+      { label: "Middleware", to: "/tutorial/middleware" },
+      { label: "Content", to: "/tutorial/content" },
     ],
   },
 ];
