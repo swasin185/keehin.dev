@@ -2,8 +2,10 @@
 ```bash
 # nuxtjs init project
 npx nuxi@latest init keehin.dev
+
 # primevue
 npm install nuxt-primevue primevue primeflex primeicons --save-dev
+
 # nuxt-auth-utils
 npx nuxi@latest module add auth-utils
 ```
@@ -23,8 +25,8 @@ npx nuxi@latest module add auth-utils
 }
 ```
 
-```javascript
 ## [nuxt.config.ts]
+```javascript
 export default defineNuxtConfig({
   devtools: { enabled: true },
   modules: ["nuxt-primevue", "nuxt-auth-utils"],
