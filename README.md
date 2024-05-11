@@ -1,4 +1,4 @@
-# Nuxt 3 Minimal Starter
+# Nuxt 3 Installation
 ```bash
 # nuxtjs init project
 npx nuxi@latest init keehin.dev
@@ -9,6 +9,7 @@ npx nuxi@latest module add auth-utils
 ```
 
 ## [package.json]
+```json
 {
   ...
   "devDependencies": {
@@ -20,7 +21,9 @@ npx nuxi@latest module add auth-utils
     "primeicons": "^7.0.0"
   }
 }
+```
 
+```javascript
 ## [nuxt.config.ts]
 export default defineNuxtConfig({
   devtools: { enabled: true },
@@ -47,5 +50,6 @@ export default defineNuxtConfig({
     },
   },
 });
+```
 
 Check out the [Documentation](https://nuxt.com/docs/getting-started/) for more information.
